@@ -1,0 +1,17 @@
+class Solution{
+public:
+   bool hasDuplicate(vector<int> nums){
+
+     unordered_set<int> seen;   // declare a set 
+
+     for(int i=0;i<nums.size();i++)  // iterate nums array having elements 
+       {
+         if(seen.find(nums[i]!=seen.end())  // if while checking for the corresponding in set if the set's end is not reached that means element found and that means duplicate of that element is detected so return true
+         {
+           return true;
+         }
+         seen.insert(nums[i]); // or else push that element into set set. NOTE : set uses insert function and not push back 
+       }
+     return false;   // if nothing detected then return false 
+   }
+};
