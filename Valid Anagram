@@ -1,0 +1,31 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+
+      if (s.length() != t.length()) return false;   // edge case 
+      unordered_map<char,int> mp;                   // declare map 
+
+
+      for(int i=0;i<s.length();i++){               //  iterate the string s and count the character frequency 
+
+        mp[s[i]]++;
+      }  
+      for(int i=0;i<t.length();i++){        // iterate the string t and decrement character frequency 
+
+        mp[t[i]]--;
+      }  
+
+      for(auto const& [key, val] : mp)   // if the map element count is not zero then return false 
+
+        
+        if(val != 0)
+        {
+            return false;
+        }
+
+
+  
+      return true;  // if all of the map element count is zero then return true 
+    }
+
+};
